@@ -1,7 +1,7 @@
 const { MongoClient, ObjectId } = require("mongodb");
+require('dotenv').config();
 
-const url =
-  "mongodb+srv://webdev:GTo5VOJU6tS4O3A9@nodejs.svlxhan.mongodb.net/?retryWrites=true&w=majority&appName=NodeJs";
+const url = process.env.MONGODB_URI;
 
 const client = new MongoClient(url);
 
