@@ -9,8 +9,21 @@ const port = 3000;
 //     res.send("HAHAHAHAHAHAHA!!!");
 // });
 
+//some regex example /ab+c/ /ab*c/  /ab?c/ /.*fly$/
+
+// app.get(/ab?c/, (req, res)=>{
+//     res.send("Hello from express server!");
+// });
+//dynamic route matching
+app.get("/user/:userid/:name/:password", (req, res)=>{
+    //http://localhost:3000/user/1/Satyam/1323@sres
+    console.log(req.params);
+    res.send({firstname: "Satyam", lastname: "Jha"});
+});
 //This will only handle GET call to user
 app.get("/user", (req, res)=>{
+    //http://localhost:3000/user?id=1&name=satyam
+    console.log(req.query);
     res.send({firstname: "Satyam", lastname: "Jha"});
 });
 

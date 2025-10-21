@@ -74,7 +74,7 @@ Routing in Node.js allows you to define how the server responds to various HTTP 
 - The `+` character matches one or more occurrences of the preceding character.
 - Example:
   ```
-  app.get('/ab+c', (req, res) => {
+  app.get(/ab+c/, (req, res) => {
     res.send('Route matched: /ab+c');
   });
   ```
@@ -88,7 +88,7 @@ Routing in Node.js allows you to define how the server responds to various HTTP 
 - The `?` character makes the preceding character optional in an Express route pattern.
 - Example:
 ```
-app.get('/ab?c', (req, res) => {
+app.get(/ab?c/, (req, res) => {
   res.send('Route matched: /ab?c');
 });
 ```
@@ -100,7 +100,7 @@ app.get('/ab?c', (req, res) => {
 - The `*` character matches any sequence of characters in an Express route.
 - Example:
 ```
-app.get('/a*cd', (req, res) => {
+app.get(/a*cd/, (req, res) => {
   res.send('Route matched: /a*cd');
 });
 ```
